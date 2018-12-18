@@ -1,4 +1,4 @@
-import { TwingNode, TwingNodeType, TwingCompiler, TwingNodeOutputInterface } from "Twing";
+import { TwingNode, TwingNodeType, TwingCompiler, TwingNodeOutputInterface } from "twing";
 import marked = require("marked");
 
 /**
