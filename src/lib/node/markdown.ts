@@ -1,16 +1,38 @@
-import { TwingNode, TwingNodeType, TwingCompiler } from "Twing";
+import { TwingNode, TwingNodeType, TwingCompiler, TwingNodeOutputInterface } from "Twing";
+import marked = require("marked");
 
 /**
  * Represents a markdown node.
  */
 export class TwingNodeMarkdown extends TwingNode {
-  constructor(value: {}, body: TwingNode, lineno: number, columnno: number, tag = 'markdown') {
-    super(new Map([['body', body]]), new Map([['value', value]]), lineno, columnno, tag);
+    TwingNodeOutputInterfaceImpl: TwingNodeOutputInterface;
 
-    this.type = TwingNodeType.TEXT;
-  }
+    constructor(body: TwingNode, lineno: number, columnno: number, tag = 'markdown') {
+        let nodes = new Map();
 
-  compile(compiler: TwingCompiler) {
-    compiler.subcompile(this.getNode('body'));
-  }
+        nodes.set('body', body);
+
+        super(nodes, new Map(), lineno, columnno, tag);
+
+        this.type = TwingNodeType.TEXT;
+
+        this.TwingNodeOutputInterfaceImpl = this;
+
+        // TODO: now need to figure out how to pipe markdown text into `marked()` and the return the result.
+        // let out = marked('### Some test md..');
+        // console.log(`output: ${out}`);
+        // console.log(this.toString());
+
+    }
+
+    compile(compiler: TwingCompiler) {
+        compiler
+            .addDebugInfo(this)
+            .addSourceMapEnter(this)
+            .write("Runtime.obStart();\n")
+            .subcompile(this.getNode('body'))
+            .write("Runtime.echo(Runtime.obGetClean());\n")
+            .addSourceMapLeave()
+        ;
+    }
 }

@@ -4,6 +4,6 @@
 import { TwingTokenParser, TwingToken, TwingNode } from "twing";
 export declare class TwingTokenParserMarkdown extends TwingTokenParser {
     parse(token: TwingToken): TwingNode;
-    decideBlockEnd(token: TwingToken): boolean;
+    decideMarkdownEnd(token: TwingToken): boolean;
     getTag(): string;
 }

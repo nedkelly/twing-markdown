@@ -2,13 +2,13 @@ import { TwingExtension } from "twing";
 import { TwingTokenParserMarkdown } from "../token-parser/markdown";
 
 export class TwingExtensionMarkdown extends TwingExtension {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  getTokenParsers() {
-    return [
-      new TwingTokenParserMarkdown()
-    ];
-  }
+    getTokenParsers() {
+        return [
+            new TwingTokenParserMarkdown()
+        ];
+    }
 }
