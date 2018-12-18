@@ -1,0 +1,30 @@
+{
+  "name": "twing-markdown",
+  "version": "1.0.0",
+  "description": "Markdown extension for Twing",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf build",
+    "build": "tsc --project .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "twing",
+    "markdown",
+    "twig",
+    "twig-markdown"
+  ],
+  "author": "Nathan Kelly <nathan@nathan-kelly.com>",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "@types/luxon": "^1.4.1",
+    "@types/node": "^10.12.15",
+    "@types/tmp": "0.0.33",
+    "rimraf": "^2.6.2",
+    "twing": "^2.1.2",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "marked": "^0.5.2"
+  }
+}

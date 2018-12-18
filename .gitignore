@@ -1,0 +1,7 @@
+.idea
+.history
+.nyc_output
+build
+coverage
+node_modules
+tmp
