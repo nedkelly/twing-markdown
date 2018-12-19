@@ -7,7 +7,7 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "tsc --project .",
-    "bundle": "browserify build/browser.js -g uglifyify -s Twing -o build/dist/lib.min.js",
+    "bundle": "browserify build/browser.js -g uglifyify -u twing -s TwingMarkdown -o build/dist/lib.min.js",
     "clean": "rimraf build",
     "cover": "nyc npm t",
     "coverage": "nyc report --reporter=text-lcov | coveralls",

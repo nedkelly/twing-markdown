@@ -1,7 +1,6 @@
 .idea
 .history
 .nyc_output
-.coveralls.yml
 build
 coverage
 node_modules
