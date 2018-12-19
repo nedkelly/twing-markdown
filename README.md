@@ -1,6 +1,10 @@
 # Twing Markdown
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
+## WORK IN PROGRESS
+
+**This package is not yet production ready!**
+
 Implements [Marked](https://www.npmjs.com/package/marked) for [Twing](https://www.npmjs.com/package/twing) using twig `{% markdown %} {% endmarkdown %}` tags.
 
 ## Example
