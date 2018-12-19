@@ -3,6 +3,52 @@
 
 Implements [Marked](https://www.npmjs.com/package/marked) for [Twing](https://www.npmjs.com/package/twing) using twig `{% markdown %} {% endmarkdown %}` tags.
 
+## Example
+
+Twig:
+```twig
+{% markdown %}
+  # Some markdown here...
+{% endmarkdown %}
+```
+
+HTML:
+```html
+<h1 id="some-markdown-here-">Some markdown here...</h1>
+```
+
+## Usage
+
+```javascript
+import { TwingLoader, TwingLoaderFilesystem } from "twing";
+import { TwingExtensionMarkdown } from "twing-markdown";
+
+const loader = new TwingLoaderFilesystem('/path/to/templates');
+const twing = new TwingEnvironment(loader);
+
+twing.addExtension(new TwingExtensionMarkdown());
+```
+
+## Twing
+
+Read the [Twing Documentation](http://ericmorand.github.io/twing) for more information.
+
+## Contributing
+
+* Fork this repository
+* Code
+* Implement tests using [tape](https://github.com/substack/tape)
+* Issue a pull request keeping in mind that all pull requests must reference an issue in the issue queue
+
+## Thanks To
+
+- [Eric MORAND](https://github.com/ericmorand) for his effort to create [Twing](https://www.npmjs.com/package/twing)
+
+
+## License
+
+Copyright © 2018 [Nathan Kelly](https://github.com/nedkelly). Released under the [2-Clause BSD License](https://github.com/nedkelly/twing-markdown/blob/master/LICENSE).
+
 [travis-image]: https://travis-ci.org/nedkelly/twing-markdown.svg?branch=master
 [travis-url]: https://travis-ci.org/nedkelly/twing-markdown
 [coveralls-image]: https://coveralls.io/repos/github/nedkelly/twing-markdown/badge.svg?branch=master
