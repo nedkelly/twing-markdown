@@ -1,5 +1,5 @@
 # Twing Markdown
-[![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
 Implements [Marked](https://www.npmjs.com/package/marked) for [Twing](https://www.npmjs.com/package/twing) using twig `{% markdown %} {% endmarkdown %}` tags.
 
@@ -49,6 +49,8 @@ Read the [Twing Documentation](http://ericmorand.github.io/twing) for more infor
 
 Copyright © 2018 [Nathan Kelly](https://github.com/nedkelly). Released under the [2-Clause BSD License](https://github.com/nedkelly/twing-markdown/blob/master/LICENSE).
 
+[npm-image]: https://badge.fury.io/js/twing-markdown.svg
+[npm-url]: https://npmjs.org/package/twing-markdown
 [travis-image]: https://travis-ci.org/nedkelly/twing-markdown.svg?branch=master
 [travis-url]: https://travis-ci.org/nedkelly/twing-markdown
 [coveralls-image]: https://coveralls.io/repos/github/nedkelly/twing-markdown/badge.svg?branch=master

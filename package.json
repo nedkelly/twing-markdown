@@ -1,6 +1,6 @@
 {
   "name": "twing-markdown",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Markdown extension for Twing",
   "main": "index.js",
   "browser": "browser.js",
@@ -11,7 +11,6 @@
     "clean": "rimraf build",
     "cover": "nyc npm t",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "postbuild": "replace-in-file '__VERSION__' $npm_package_version build/**/*",
     "postpack": "rimraf lib dist browser.* index.*",
     "prebuild": "npm run clean",
     "precover": "rimraf coverage .nyc_output",
@@ -26,6 +25,7 @@
     "twig",
     "twig-markdown"
   ],
+  "homepage": "https://github.com/nedkelly/twing-markdown",
   "author": "Nathan Kelly <nathan@nathan-kelly.com>",
   "license": "BSD-2-Clause",
   "repository": {
@@ -38,7 +38,7 @@
   "devDependencies": {
     "@types/luxon": "^1.4.1",
     "@types/marked": "^0.5.0",
-    "@types/node": "^10.12.15",
+    "@types/node": "^10.12.17",
     "@types/tmp": "0.0.33",
     "browserify": "^16.2.3",
     "coveralls": "^3.0.2",
