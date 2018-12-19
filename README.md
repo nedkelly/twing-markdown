@@ -5,6 +5,8 @@
 
 **This package is not yet production ready!**
 
+---
+
 Implements [Marked](https://www.npmjs.com/package/marked) for [Twing](https://www.npmjs.com/package/twing) using twig `{% markdown %} {% endmarkdown %}` tags.
 
 ## Example
@@ -47,6 +49,7 @@ Read the [Twing Documentation](http://ericmorand.github.io/twing) for more infor
 ## Thanks To
 
 - [Eric MORAND](https://github.com/ericmorand) for his effort to create [Twing](https://www.npmjs.com/package/twing)
+- [The team @ markedjs](https://github.com/orgs/markedjs/people) for [Marked](https://www.npmjs.com/package/marked)
 
 
 ## License
