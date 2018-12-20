@@ -1,6 +1,6 @@
 {
   "name": "twing-markdown",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Markdown extension for Twing",
   "main": "index.js",
   "browser": "browser.js",
