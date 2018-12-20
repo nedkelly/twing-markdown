@@ -23,7 +23,11 @@ tap.test('node/markdown', function (test) {
 
     test.test('compile', function (test) {
         let bodyNodes = new Map([
-            [0, new TwingNodeText('<div>   <div>   foo   </div>   </div>', 1, 1)]
+            [0, new TwingNodeText(`# Markdown Heading 1
+                * List:*
+                - List Item 1
+                - List Item 2
+                `, 1, 1)]
         ]);
 
         let body = new TwingNode(bodyNodes);
@@ -32,9 +36,20 @@ tap.test('node/markdown', function (test) {
 
         test.same(compiler.compile(node).getSource(), `// line 1, column 1
 Runtime.obStart();
-Runtime.echo(\`<div>   <div>   foo   </div>   </div>\`);
-Runtime.echo(Runtime.obGetClean());
-`);
+Runtime.echo(\`# Markdown Heading 1
+                * List:*
+                - List Item 1
+                - List Item 2
+                \`);
+(() => {
+    let content = Runtime.obGetClean();
+    let matches = content.match(/^s*/);
+    let lines = content.split('\\n');
+    let re = new RegExp(\`/^\${matches[0]}/\`, 'g');
+    content =  lines.map(l => l.replace(re));
+    content = content.join('\\n');
+    Runtime.echo(this.extensions.get('TwingExtensionMarkdown').markdown(content));
+})();\n`);
 
         test.end();
     });

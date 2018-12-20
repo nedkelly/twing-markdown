@@ -33,11 +33,10 @@ export class TwingNodeMarkdown extends TwingNode {
             .write("let re = new RegExp(`/^${matches[0]}/`, 'g');\n")
             .write("content =  lines.map(l => l.replace(re));\n")
             .write("content = content.join('\\n');\n")
-            .write("let markdown = new Runtime.TwingMarkdown(content);\n")
-            .write("Runtime.echo(markdown.render());\n")
+            .write("Runtime.echo(this.extensions.get('TwingExtensionMarkdown').markdown(content));\n")
             .outdent()
             .write("})();\n")
-            .addSourceMapLeave();
-        console.log(compiler.getSource());
+            .addSourceMapLeave()
+        ;
     }
 }
