@@ -1,4 +1,8 @@
 
+1.0.0
+
+ * First working release, includes `markdown` filter and `markdown` tag
+
 0.0.0
 
  * Initial release, Marked not yet hooked up

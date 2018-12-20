@@ -1,18 +1,20 @@
 # Twing Markdown
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage percentage][coveralls-image]][coveralls-url]
 
-## WORK IN PROGRESS
-
-**This package is not yet production ready!**
-
----
-
 Implements [Marked](https://www.npmjs.com/package/marked) for [Twing](https://www.npmjs.com/package/twing) using twig `{% markdown %} {% endmarkdown %}` tags.
+
+_**NB:** Not yet implemented in browser!_
 
 ## Example
 
 Twig:
 ```twig
+{# With Filter #}
+
+{{ '# Some markdown here...'|markdown }}
+
+{# With Tag #}
+
 {% markdown %}
   # Some markdown here...
 {% endmarkdown %}
@@ -26,7 +28,7 @@ HTML:
 ## Usage
 
 ```javascript
-import { TwingLoader, TwingLoaderFilesystem } from "twing";
+import { TwingLoaderFilesystem, TwingEnvironment } from "twing";
 import { TwingExtensionMarkdown } from "twing-markdown";
 
 const loader = new TwingLoaderFilesystem('/path/to/templates');
