@@ -3,6 +3,7 @@ const TwingTestMockBuilderParser = require('../../../../../mock-builder/parser')
 const { TwingTokenParserMarkdown } = require("../../../../../../build/lib/token-parser/markdown");
 
 const tap = require('tape');
+const sinon = require('sinon');
 
 class ExpressionParser {
     parseExpression() {
@@ -26,6 +27,8 @@ tap.test('token-parser/markdown', function (test) {
 
             let tokenParser = new TwingTokenParserMarkdown();
             let parser = TwingTestMockBuilderParser.getParser(stream, new ExpressionParser());
+
+            sinon.stub(parser, 'getStream').returns(stream);
 
             tokenParser.setParser(parser);
 
