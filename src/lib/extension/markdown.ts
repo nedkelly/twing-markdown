@@ -1,4 +1,4 @@
-import { TwingExtension, TwingRuntimeLoaderInterface, TwingFilter, TwingFunction } from "twing";
+import { TwingExtension, TwingFilter } from "twing";
 import { TwingTokenParserMarkdown } from "../token-parser/markdown";
 import marked = require("marked");
 

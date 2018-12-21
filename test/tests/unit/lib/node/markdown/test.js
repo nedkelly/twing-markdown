@@ -7,7 +7,11 @@ const tap = require('tape');
 tap.test('node/markdown', function (test) {
     test.test('constructor', function (test) {
         let bodyNodes = new Map([
-            [0, new TwingNodeText('<div>   <div>   foo   </div>   </div>', 1, 1)]
+            [0, new TwingNodeText(`# Markdown Heading 1
+                * List:*
+                - List Item 1
+                - List Item 2
+                `, 1, 1)]
         ]);
 
         let body = new TwingNode(bodyNodes);
